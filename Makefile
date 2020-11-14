@@ -24,8 +24,9 @@ $(NAME):	${OBJ}
 			ar rcs ${NAME} ${OBJ}
 clean:
 			rm -f ${OBJ} ${BONUSO}
-fclean:
-			rm -f ${OBJ} ${NAME}
+
+fclean:		clean
+			rm -f ${NAME}
 
 bonus:		${OBJ} ${BONUSO}
 			ar rcs ${NAME} ${OBJ} ${BONUSO}
