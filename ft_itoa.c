@@ -6,13 +6,13 @@
 /*   By: mmetis <mmetis@student.21-school.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 13:53:27 by mmetis            #+#    #+#             */
-/*   Updated: 2020/11/08 15:32:40 by mmetis           ###   ########.fr       */
+/*   Updated: 2020/11/14 14:35:51 by mmetis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			cntnum(size_t n)
+static int			cntnum(long n)
 {
 	if (n < 10)
 		return (1);
@@ -26,10 +26,10 @@ static unsigned int	ft_abs(int n)
 	return (n);
 }
 
-static void			recitoa(size_t n, char *str)
+static void			recitoa(long n, char *str)
 {
 	*(str + 1) = 0;
-	if (n > 10)
+	if (n >= 10)
 		recitoa(n / 10, str - 1);
 	*str = n % 10 + 48;
 }
@@ -37,7 +37,7 @@ static void			recitoa(size_t n, char *str)
 char				*ft_itoa(int n)
 {
 	char	*str;
-	size_t	num;
+	long	num;
 	int		len;
 	int		sign;
 

@@ -6,7 +6,7 @@
 /*   By: mmetis <mmetis@student.21-school.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 13:47:59 by mmetis            #+#    #+#             */
-/*   Updated: 2020/11/08 16:28:50 by mmetis           ###   ########.fr       */
+/*   Updated: 2020/11/14 16:19:03 by mmetis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,12 @@ char			**ft_split(char *s, char c)
 	while (i < len)
 	{
 		split[i] = ft_strchrdup(&s, c);
-		if (!split[i++])
+		if (!split[i])
 		{
 			split_clear(split);
 			return (0);
 		}
+		i++;
 	}
 	split[i] = 0;
 	return (split);

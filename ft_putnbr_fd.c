@@ -6,13 +6,13 @@
 /*   By: mmetis <mmetis@student.21-school.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 14:03:35 by mmetis            #+#    #+#             */
-/*   Updated: 2020/11/08 15:45:17 by mmetis           ###   ########.fr       */
+/*   Updated: 2020/11/14 14:49:40 by mmetis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		writenum(size_t num, int fd)
+static void			writenum(unsigned int num, int fd)
 {
 	char c;
 
@@ -22,19 +22,19 @@ static void		writenum(size_t num, int fd)
 	write(fd, &c, 1);
 }
 
-static size_t	ft_abs(int n)
+static unsigned int	ft_abs(int n)
 {
 	if (n < 0)
 		return (-n);
 	return (n);
 }
 
-void			ft_putnbr_fd(int n, int fd)
+void				ft_putnbr_fd(int n, int fd)
 {
-	size_t num;
+	unsigned int num;
 
-	num = ft_abs(n);
 	if (n < 0)
 		write(fd, "-", 1);
+	num = ft_abs(n);
 	writenum(num, fd);
 }

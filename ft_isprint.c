@@ -6,11 +6,11 @@
 /*   By: mmetis <mmetis@student.21-school.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 20:20:16 by mmetis            #+#    #+#             */
-/*   Updated: 2020/11/11 20:20:18 by mmetis           ###   ########.fr       */
+/*   Updated: 2020/11/14 14:07:56 by mmetis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sprint(int c)
+int	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);
 }
