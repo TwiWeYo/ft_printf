@@ -6,7 +6,7 @@
 /*   By: mmetis <mmetis@student.21-school.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 20:27:45 by mmetis            #+#    #+#             */
-/*   Updated: 2020/11/23 17:58:04 by mmetis           ###   ########.fr       */
+/*   Updated: 2020/11/23 20:58:46 by mmetis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char		*ft_substr(char const *s, unsigned int start,
 
 	size = ft_strlen(s);
 	if (start > size)
-		return (0);
+		return (ft_strdup(""));
 	if (len > size - start)
 		len = size - start;
 	if (!(str = malloc((len + 1) * sizeof(char))))

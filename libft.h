@@ -6,7 +6,7 @@
 /*   By: mmetis <mmetis@student.21-school.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 17:12:34 by mmetis            #+#    #+#             */
-/*   Updated: 2020/11/14 17:24:04 by mmetis           ###   ########.fr       */
+/*   Updated: 2020/11/23 20:55:44 by mmetis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char				*ft_strtrim(char const *s1, char const *set);
 
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-char				**ft_split(char *s, char c);
+char				**ft_split(char const *s, char c);
 
 t_list				*ft_lstnew(void *content);
 t_list				*ft_lstlast(t_list *lst);

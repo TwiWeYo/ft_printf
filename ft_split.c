@@ -6,13 +6,13 @@
 /*   By: mmetis <mmetis@student.21-school.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 13:47:59 by mmetis            #+#    #+#             */
-/*   Updated: 2020/11/23 18:14:29 by mmetis           ###   ########.fr       */
+/*   Updated: 2020/11/23 20:55:15 by mmetis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_wordlen(char *s, char c, size_t *len)
+static const char	*ft_wordlen(char const *s, char c, size_t *len)
 {
 	*len = 0;
 	while (*s == c)
@@ -22,7 +22,7 @@ static char		*ft_wordlen(char *s, char c, size_t *len)
 	return (s);
 }
 
-static size_t	ft_wordcnt(char *s, char c)
+static size_t		ft_wordcnt(char const *s, char c)
 {
 	size_t len;
 
@@ -33,7 +33,7 @@ static size_t	ft_wordcnt(char *s, char c)
 	return (1 + ft_wordcnt(s + len, c));
 }
 
-static char		**ft_clear(char **str)
+static char			**ft_clear(char **str)
 {
 	size_t i;
 
@@ -44,25 +44,25 @@ static char		**ft_clear(char **str)
 	return (0);
 }
 
-char			**ft_split(char *str, char c)
+char				**ft_split(char const *s, char c)
 {
 	char	**split;
 	size_t	len;
 	size_t	i;
 	size_t	cnt;
 
-	cnt = ft_wordcnt(str, c);
+	cnt = ft_wordcnt(s, c);
 	if (!(split = malloc((cnt + 1) * sizeof(char*))))
 		return (0);
 	i = 0;
 	len = 0;
 	while (i < cnt)
 	{
-		str = ft_wordlen(str, c, &len);
-		split[i] = ft_substr(str, 0, len);
+		s = ft_wordlen(s, c, &len);
+		split[i] = ft_substr(s, 0, len);
 		if (!split[i++])
 			return (ft_clear(split));
-		str += len;
+		s += len;
 	}
 	split[i] = 0;
 	return (split);
