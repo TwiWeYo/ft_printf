@@ -6,7 +6,7 @@
 /*   By: mmetis <mmetis@student.21-school.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 17:14:14 by mmetis            #+#    #+#             */
-/*   Updated: 2020/11/14 17:20:45 by mmetis           ###   ########.fr       */
+/*   Updated: 2020/11/19 18:31:13 by mmetis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void (*del)(void *))
 	{
 		start->next = ft_lstmap(lst->next, f, del);
 		if (start->next == 0)
-			ft_lstdelone(lst, del);
+			ft_lstdelone(start, del);
 	}
 	return (start);
 }

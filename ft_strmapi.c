@@ -6,7 +6,7 @@
 /*   By: mmetis <mmetis@student.21-school.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 13:57:35 by mmetis            #+#    #+#             */
-/*   Updated: 2020/11/08 15:42:06 by mmetis           ###   ########.fr       */
+/*   Updated: 2020/11/19 18:30:09 by mmetis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned
 		str[i] = f(i, s[i]);
 		i++;
 	}
+	str[i] = 0;
 	return (str);
 }
